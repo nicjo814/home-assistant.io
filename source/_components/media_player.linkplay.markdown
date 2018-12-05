@@ -46,6 +46,6 @@ Simulate pressing one of the physical preset buttons on the device.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | Name(s) of the Linkplay devices where the button should be pressed. If omitted the button will be pressed on all available devices.
+| `entity_id` | no | Name(s) of the Linkplay devices where the button should be pressed.
 | `preset` | no | The preset button to simulate pressing.
 
