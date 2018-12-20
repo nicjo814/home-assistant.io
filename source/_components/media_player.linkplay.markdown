@@ -23,6 +23,7 @@ To add your Linkplay based player to your installation, add the following to you
 media_player:
   - platform: linkplay
     host: IP_ADDRESS
+    name: NAME
 ```
 
 {% configuration %}
@@ -31,8 +32,8 @@ host:
   required: true
   type: string
 name:
-  description: Name of the Linkplay device.
-  required: false
+  description: Name of the Linkplay device. The name must exactly match the name of the device as specified in the mobile app used to control the device.
+  required: true
   type: string
 lastfm_api_key:
   description: Your own LastFM API key that can be used to fetch album cover art. An API key can be generated [here](https://www.last.fm/api/account/create).
@@ -48,4 +49,22 @@ Simulate pressing one of the physical preset buttons on the device.
 | ---------------------- | -------- | ----------- |
 | `entity_id` | no | Name(s) of the Linkplay devices where the button should be pressed.
 | `preset` | no | The preset button to simulate pressing.
+
+### {% linkable_title Service `linkplay_connect_multiroom` %}
+
+Connect a slave device to multiroom master device.
+
+| Service data attribute | Optional | Description |
+| ---------------------- | -------- | ----------- |
+| `entity_id` | no | Name of the slave device that should be connected.
+| `master_id` | no | Name of the master device to connect to.
+
+### {% linkable_title Service `linkplay_remove_slaves` %}
+
+Remove slave device(s) from multiroom master device.
+
+| Service data attribute | Optional | Description |
+| ---------------------- | -------- | ----------- |
+| `entity_id` | no | Name of the master device from which the slaves should be removed.
+| `slave_ids` | no | Name of the slave device(s) to remove.
 
